@@ -98,6 +98,7 @@
     </section>
 
 
+    
     <!-- ======= Nuestras Guitarras ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
@@ -117,7 +118,23 @@
             </ul>
           </div>
         </div>
-        <p id="especificaciones"></p>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="especificaciones" class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row portfolio-container" data-aos="fade-up">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-electricas">
@@ -125,7 +142,8 @@
               <img src="assets/img/productos/fender-telecaster.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/productos/fender-telecaster.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="TELECASTER"><i class="ver">Ver</i></a>
-                <a class="comprar" title="Detalles"><i class="ver">Comprar</i></a>
+                <a type="button" class="comprar" title="Detalles" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ver">Comprar</i></a>
+                
               </div>
             </div>
           </div>
@@ -137,7 +155,7 @@
               <img src="assets/img/productos/fender-malibu.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/productos/fender-malibu.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="ver">Ver</i></a>
-                <a class="comprar" title="Detalles"><i class="ver">Comprar</i></i></a>
+                <a type="button" class="comprar" title="Detalles" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ver">Comprar</i></a>
               </div>
             </div>
           </div>

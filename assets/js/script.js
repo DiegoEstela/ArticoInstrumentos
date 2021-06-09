@@ -29,6 +29,11 @@ class Procucto{
         return mostar;
     }
 
+    mostrarNombre(){
+        var mostrarNombre=(this.modelo);
+        return mostrarNombre;
+    }
+
 }
 
 
@@ -48,6 +53,7 @@ const arrayGuitarras = [guitarraUno,guitarraDos,guitarraTres,guitarraCuatro,guit
 
 const comprar = document.getElementsByClassName("comprar");
 const especificaciones = document.getElementById("especificaciones");
+const nombresMarcas = document.getElementById("exampleModalLabel");
 
 
 
@@ -55,13 +61,13 @@ const especificaciones = document.getElementById("especificaciones");
 comprar[0].addEventListener ("click", () => {
 
     especificaciones.innerText = arrayGuitarras[0].mostrarGuitarra();
-
+    nombresMarcas.innerText = arrayGuitarras[0].mostrarNombre();
 });
 
 comprar[1].addEventListener ("click", () => {
 
     especificaciones.innerText = arrayGuitarras[1].mostrarGuitarra();
-
+    nombresMarcas.innerText = arrayGuitarras[1].mostrarNombre();
 });
 
 
