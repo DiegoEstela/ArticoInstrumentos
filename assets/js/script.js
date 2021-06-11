@@ -64,8 +64,8 @@ productos.forEach(prod => {
     card.classList.add('col-lg-4')
     card.classList.add('col-md-6')
     card.classList.add('portfolio-item')
+    card.classList.add(prod.filtro)
     card.innerHTML = `
-        
         
             <div class="portfolio-wrap">
                 <img src= ${prod.imagen} class="img-fluid" alt="">
