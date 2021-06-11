@@ -61,9 +61,12 @@ const listaProductos = document.getElementById('productos')
 
 productos.forEach(prod => {
     let card = document.createElement('div')
+    card.classList.add('col-lg-4')
+    card.classList.add('col-md-6')
+    card.classList.add('portfolio-item')
     card.innerHTML = `
         
-        <div class="col-lg-4 col-md-6 portfolio-item">
+        
             <div class="portfolio-wrap">
                 <img src= ${prod.imagen} class="img-fluid" alt="">
                 <div class="portfolio-links">
@@ -71,7 +74,7 @@ productos.forEach(prod => {
                 <a id="prod-${prod.id}" class="comprar" title="Detalles"><i class="ver">Comprar</i></i></a>
                 </div>
             </div>
-        </div>
+        
     `
     listaProductos.appendChild(card)
 
