@@ -22,6 +22,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 90px;
 }
 
+/* login*/
+
+.cuerpoModal{
+
+ 
+  
+}
+
+.cuerpoModal .form-control{
+  
+  width: 70%;
+  margin: 3% 15%;
+  text-align: center;
+  align-content: center;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
