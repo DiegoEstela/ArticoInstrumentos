@@ -4,5 +4,11 @@ const password = document.getElementById('password');
 
 form.addEventListener('submit',function(event){
     
-    console.log('click')
+    let users = [
+        {
+            usuario : username.Value,
+            contrasenia : password.Value
+        }
+    ];
+    console.log(users)
 });
