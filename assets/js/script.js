@@ -1,4 +1,5 @@
 
+
 const listaProductos = document.getElementById('productos')
 
 productos.forEach(prod => {
