@@ -1,7 +1,7 @@
 
 let productos = [
     {
-        id:0,
+        id:1,
         marca: "fender",
         modelo: "Telecaster",
         anio: 1980,
@@ -10,7 +10,7 @@ let productos = [
         filtro: "filter-electricas"
     },
     {
-        id:1,
+        id:2,
         marca: "fender",
         modelo: "malibu",
         anio: 1996,
@@ -20,7 +20,7 @@ let productos = [
     },
 
     {
-        id:2,
+        id:3,
         marca: "taylor",
         modelo: "D400",
         anio: 2005,
@@ -29,7 +29,7 @@ let productos = [
         filtro: "filter-electroAcusticas"
     },
     {
-        id:3,
+        id:4,
         marca: "gibson",
         modelo: "SG",
         anio: 1975,
@@ -38,7 +38,7 @@ let productos = [
         filtro: "filter-electricas"
     },
     {
-        id:4,
+        id:5,
         marca: "gibson",
         modelo: "lespaul",
         anio: 1996,
@@ -47,7 +47,7 @@ let productos = [
         filtro: "filter-electricas"
     },
     {
-        id:5,
+        id:6,
         marca: "fender",
         modelo: "Stratocaster",
         anio: 1975,
