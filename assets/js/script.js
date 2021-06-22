@@ -1,6 +1,7 @@
 
 
 const listaProductos = document.getElementById('productos')
+let carrito = []
 
 productos.forEach(prod => {
     let card = document.createElement('div')
@@ -23,6 +24,8 @@ productos.forEach(prod => {
 
     let boton = document.getElementById('prod-' + prod.id)
     boton.addEventListener("click", () =>{
-        console.log("se agrego al carrito el producto ID:" + prod.id)
+        console.log("se agrego al carrito el producto: " + prod.marca + " " + prod.modelo)
+        carrito.push(productos[prod.id - 1]);
+        console.log(carrito);
     } )
 })
