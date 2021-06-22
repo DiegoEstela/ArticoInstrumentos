@@ -1,8 +1,15 @@
 
 
-const listaProductos = document.getElementById('productos')
-let carrito = []
+const listaProductos = document.getElementById('productos');
+let carrito = [];
 
+function agregarItem(objeto){
+
+    Object.defineProperty(objeto, 'cant', {value: 1, writable: true});
+    carrito.push(objeto);
+    console.log(carrito);
+
+}
 productos.forEach(prod => {
     let card = document.createElement('div')
     card.classList.add('col-lg-4')
@@ -25,7 +32,19 @@ productos.forEach(prod => {
     let boton = document.getElementById('prod-' + prod.id)
     boton.addEventListener("click", () =>{
         console.log("se agrego al carrito el producto: " + prod.marca + " " + prod.modelo)
-        carrito.push(productos[prod.id - 1]);
-        console.log(carrito);
+        let idEncontrado = false;
+        for (item of carrito){
+            if (item.id == prod.id){
+                console.log("existe id igual");
+                item.cant = item.cant + 1;
+                console.log(carrito);
+                idEncontrado = true;
+
+            }
+        }
+        if(idEncontrado == false){
+            objetoAAgregar = productos [prod.id - 1];
+            agregarItem(objetoAAgregar);
+        }
     } )
 })
