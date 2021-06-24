@@ -29,3 +29,16 @@ if (usernameDos != null){
 
     saludo.innerHTML = `<a class="nav-link scrollto active"> Hola ` + usernameDos[0].usuario +  `</a>`
 }
+
+$("#titulo").animate({
+    opacity:0.50,
+    
+}, 1500, function(){
+    console.log("termino primer animacion");
+});
+
+$("#titulo").css("color","white")
+
+    .delay(1500)
+    .fadeOut(1500)
+    .fadeIn(1500);
