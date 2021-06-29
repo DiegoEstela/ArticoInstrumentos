@@ -21,6 +21,7 @@ $("#form").submit(function (e) {
     });
 
 
+    
 const saludo = document.getElementById('saludo');
 
 let usernameDos = JSON.parse(sessionStorage.getItem('usuario'));
@@ -28,7 +29,27 @@ let usernameDos = JSON.parse(sessionStorage.getItem('usuario'));
 if (usernameDos != null){
 
     saludo.innerHTML = `<a class="nav-link scrollto active"> Hola ` + usernameDos[0].usuario +  `</a>`
+
+    function agregarDatos(){
+
+        let usersJson ={
+            "user": usernameDos[0].usuario ,
+            "password": usernameDos[0].contrasenia
+        }
+    
+        $.post("https://jsonplaceholder.typicode.com/posts", usersJson).done(function(data, estado) {
+            console.log("Estado que retorna POST jsonplaceholder: " + estado);
+            console.log(data);
+            console.log("Data de retorno: " + JSON.stringify(data));
+        });
+    }
+    agregarDatos();
 }
+
+
+
+
+
 
 $("#titulo").animate({
     opacity:0.50,
