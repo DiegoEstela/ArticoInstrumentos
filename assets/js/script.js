@@ -2,6 +2,7 @@
 
 const listaProductos = document.getElementById('productos');
 let carrito = [];
+let numeroCompras = [];
 
 function agregarItem(objeto){
 
@@ -31,6 +32,8 @@ productos.forEach(prod => {
 
     let boton = document.getElementById('prod-' + prod.id)
     boton.addEventListener("click", () =>{
+        numeroCompras.push("se compro una " + prod.modelo)
+        $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)
         console.log("se agrego al carrito el producto: " + prod.marca + " " + prod.modelo)
         let idEncontrado = false;
         for (item of carrito){
