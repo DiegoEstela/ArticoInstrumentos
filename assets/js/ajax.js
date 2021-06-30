@@ -16,6 +16,5 @@ obtenerdatos();
  const valorDolar = localStorage.getItem('dolar');
 console.log(valorDolar);
 
-dolar = parseInt(valorDolar)
-console.log(dolar * 3)
+
 
