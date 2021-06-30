@@ -66,11 +66,22 @@
 
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
+      
+      <div class="carrito-container">
+        <div class="carrito-footer">
+        <button type="button" class="bntCompra btn btn-outline-primary">Finalizar la compra</button>
+        <button type="button" id="salirCarrito" class="bntCompra btn btn-outline-secondary">Salir</button>
+      </div>
+      </div>
+      
       <h1 id="titulo">ARTICO MUSICA</h1>
       <h2 id="tituloDos">amamos tanto la musica como los instrumentos, por eso ,vendemos los mejores!</h2>
       <a href="#about" class="btn-get-started scrollto"><i id="btnTitulo" class="bx bx-chevrons-down" > </i></a>
     </div>
   </section>
+
+
+
 
   <main id="main">
 
@@ -209,7 +220,7 @@
   </button>
   <a href="#" id="bntCarrito" class="back-to-top d-flex align-items-center justify-content-center"> 
 
-    <i class="bi bi-cart-fill"></i>
+    <i id="mostrarCarrito" class="bi bi-cart-fill"></i>
   </a>
 
   <script src="assets/vendor/aos/aos.js"></script>
@@ -225,6 +236,7 @@
   <script src="assets/js/login.js"></script>
   <script src="assets/js/productos.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/carrito.js"></script>
   <script src="assets/js/ajax.js"></script>
 </body>
 

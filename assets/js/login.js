@@ -49,7 +49,7 @@ if (usernameDos != null){
 
 
 
-
+/*
 
 $("#titulo").animate({
     opacity:0.50,
@@ -63,3 +63,4 @@ $("#titulo").css("color","white")
     .delay(1500)
     .fadeOut(1500)
     .fadeIn(1500);
+*/
