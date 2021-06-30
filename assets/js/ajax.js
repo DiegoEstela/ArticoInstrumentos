@@ -1,4 +1,5 @@
 function obtenerdatos() {
+ 
   $.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales').done(
     function(resultado, estado) {
       console.log('el estado es:' + estado);
@@ -15,6 +16,5 @@ function obtenerdatos() {
 obtenerdatos();
  const valorDolar = localStorage.getItem('dolar');
 console.log(valorDolar);
-
 
 

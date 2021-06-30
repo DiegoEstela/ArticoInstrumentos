@@ -67,7 +67,8 @@
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
       
-      <div class="carrito-container">
+      <div id="cuerpoCarrito" class="carrito-container">
+        
         <div class="carrito-footer">
         <button type="button" class="bntCompra btn btn-outline-primary">Finalizar la compra</button>
         <button type="button" id="salirCarrito" class="bntCompra btn btn-outline-secondary">Salir</button>
@@ -149,11 +150,30 @@
               <li data-filter=".filter-electricas">Electricas</li>
             </ul>
           </div>
-        </div>        
-        <div id="productos" class="row portfolio-container" data-aos="fade-up">
 
+
+
+        <!-- aca se crean las Cards -->
+        </div>        
+          <div id="productos" class="row portfolio-container" data-aos="fade-up">
         </div>
-    </section><!-- End Portfolio Section -->
+        <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Felicitaciones!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="cuerpoModalcompra" class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
   </main><!-- End #main -->
 
