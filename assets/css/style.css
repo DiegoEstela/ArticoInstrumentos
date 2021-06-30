@@ -46,7 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 .carrito-footer{
 
   position: relative;
-  top: 90%;
   width: 100%;
   text-align: end;
   padding-right: 5%;
@@ -54,6 +53,14 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 
+.table{
+
+  font-size: 80%;
+}
+
+tr{
+  height: 85%;
+}
 
 /*--------------------------------------------------------------
 # Modales
