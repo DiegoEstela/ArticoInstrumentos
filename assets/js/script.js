@@ -4,39 +4,6 @@ const listaProductos = document.getElementById('productos');
 let carrito = [];
 let numeroCompras = [];
 
-function agregarItem(objeto){
-
-    Object.defineProperty(objeto, 'cant', {value: 1, writable: true});
-    carrito.push(objeto);
-    console.log(carrito);
-
-    carrito.forEach(prod => {
-
-
-        $("#cuerpoTabla").append(`
-    
-        <tr>
-        <th scope="row">${prod.id}</th>
-        <td>${prod.cant}</td>
-        <td>${prod.marca}</td>
-        <td>${prod.modelo}</td>
-        <td>${valorDolar}</td>
-        <td>${prod.precio}</td>
-        <td>${prod.precio*2}</td>
-        </tr>
-        `
-        )
-        
-    })
-
-    
-
-}
-
-
-
-
-
 
 /* Lista de Productos*/
 
@@ -66,43 +33,27 @@ productos.forEach(prod => {
         botonAgregar.addEventListener("click", () =>{ 
             numeroCompras.push(+1)
             $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)
+    
+            carrito.push(productos [prod.id - 1])
+           
+            let carritoLleno = carrito
+            localStorage.setItem('carritoLleno', JSON.stringify(carritoLleno));
+
+           
+
             
-            let idEncontrado = false;
-            for (item of carrito){
-                if (item.id == prod.id){
-                    console.log("existe id igual");
-                    item.cant = item.cant + 1;
-                    console.log(carrito);
-                    idEncontrado = true;
-    
-                }
-            }
-            if(idEncontrado == false){
-                objetoAAgregar = productos [prod.id - 1];
-                agregarItem(objetoAAgregar);
-            }
-
-            })
-         
-    
-
+})
 })
 
-carrito.forEach(prod => {
-
-    $("#cuerpoTabla").append(`
-
+localStorage.removeItem('carritoLleno');
+            
+$("#finCompra").click(function () { 
     
-    <tr>
-    <th scope="row">${prod.id}</th>
-    <td>${prod.cant}</td>
-    <td>${prod.marca}</td>
-    <td>${prod.modelo}</td>
-    <td>${valorDolar}</td>
-    <td>${prod.precio}</td>
-    <td>${prod.precio*2}</td>
-    </tr>
-    `
-    )
+    localStorage.removeItem('carritoLleno');
+});
 
-})
+
+let carritoLlenoDos = JSON.parse(localStorage.getItem('carritoLleno'));         
+carritoLleno.forEach(prod=> {
+            
+    console.log(prod)})

@@ -2,6 +2,7 @@
 let productos = [
     {
         id:1,
+        cantidad:1,
         marca: "fender",
         modelo: "Telecaster",
         anio: 1980,
@@ -11,6 +12,7 @@ let productos = [
     },
     {
         id:2,
+        cantidad:1,
         marca: "fender",
         modelo: "malibu",
         anio: 1996,
@@ -21,6 +23,7 @@ let productos = [
 
     {
         id:3,
+        cantidad:1,
         marca: "taylor",
         modelo: "D400",
         anio: 2005,
@@ -30,6 +33,7 @@ let productos = [
     },
     {
         id:4,
+        cantidad:1,
         marca: "gibson",
         modelo: "SG",
         anio: 1975,
@@ -39,6 +43,7 @@ let productos = [
     },
     {
         id:5,
+        cantidad:1,
         marca: "gibson",
         modelo: "lespaul",
         anio: 1996,
@@ -48,6 +53,7 @@ let productos = [
     },
     {
         id:6,
+        cantidad:1,
         marca: "fender",
         modelo: "Stratocaster",
         anio: 1975,
