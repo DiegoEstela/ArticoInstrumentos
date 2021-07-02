@@ -3,13 +3,13 @@
 const listaProductos = document.getElementById('productos');
 let carrito = [];
 let numeroCompras = [];
-let carritoLleno = [];
-
 
 function agregarItem(objeto){
 
     Object.defineProperty(objeto, 'cant', {value: 1, writable: true});
-    carritoLleno.push(objeto);
+    carrito.push(objeto);
+    console.log(carrito);
+
 }
 
 /* Lista de Productos*/
@@ -40,62 +40,72 @@ productos.forEach(prod => {
         botonAgregar.addEventListener("click", () =>{ 
             numeroCompras.push(+1)
             $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)
-            
-            carrito.push(productos[prod.id - 1])
-            
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            
-            obetenerComprasLS()
-
-            
            
+            let idEncontrado = false;
+        for (item of carrito){
+            if (item.id == prod.id){
+                console.log("existe id igual");
+                item.cant = item.cant + 1;
+                console.log(carrito);
+                idEncontrado = true;
 
+            }
+        }
+        if(idEncontrado == false){
+            objetoAAgregar = productos [prod.id - 1];
+            agregarItem(objetoAAgregar);
+        }
             
-        })
     })
 
-    function obetenerComprasLS(){
 
-        if(localStorage.getItem("carrito") === null){
+})
 
-            carrito = [];
-        }else{
-            carrito = JSON.parse(localStorage.getItem("carrito"))
-            console.log(carrito)
+localStorage.clear("carrito")
 
-            sumarAlLs();
-
-            function sumarAlLs(){
-            Object.values(carrito).forEach(produ => {
-                $("#cuerpoTabla").append(`
+$("#bntCarrito").click(function () { 
     
-                <tr>
-                <td>${produ.cant}</td>
-                <td>${produ.marca}</td>
-                <td>${produ.modelo}</td>
-                <td>${valorDolar}</td>
-                <td>${produ.precio}</td>
-                <td>${produ.precio*2}</td>
-                </tr>
-                `
-                )
-                
-                })    
-            }
+    console.log(carrito)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    Object.values(carrito).forEach(produ => {
+        let contador = 0;  
+        $("#cuerpoTabla").append(`
 
-         $("#finCompra").click(function (e) { 
-             
-             localStorage.removeItem("carrito")
-             carrito = [];
-             numeroCompras = [];
-             $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
+        <tr>
+        <td id="cantidad"> < /td>
+        <td>${produ.marca}</td>
+        <td>${produ.modelo}</td>
+        <td>${produ.precio}</td>
+        <td>${produ.cant * produ.precio}</td>
+        <td>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btnCarritoCuenta btn btn-success"></button>
+        <button class="btnCarritoCuenta btn btn-danger"></button>
+        </div>
+        </div>
+        </tr>
+        `
+        )
+        
+        $(".btnCarritoCuenta btn btn-success").click(function (e) { 
+            e.preventDefault()
+            contador ++;
+            console.log(contador)
+
+        });
             
-            });
-            
-        }
+    });   
+        localStorage.removeItem("carrito")
+});
 
-    }    
+
+
+
+
+ $("#finCompra").click(function () { 
+            
+    numeroCompras = [];
+    $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
     
+});
     
-    
-    localStorage.removeItem("carrito")

@@ -52,7 +52,19 @@ h1, h2, h3, h4, h5, h6 {
   
   
 }
+.btn-group{
 
+ 
+
+}
+
+.btnCarritoCuenta{
+
+  width: 0.5px;
+  height: 4px;
+  text-align: center;
+
+}
 .table{
 
   font-size: 80%;
