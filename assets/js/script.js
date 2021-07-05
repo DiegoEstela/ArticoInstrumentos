@@ -8,7 +8,6 @@ localStorage.clear("carrito")
 
 function agregarItem(objeto){
 
-    Object.defineProperty(objeto, 'cant', {value: 1, writable: true});
     carrito.push(objeto);
     console.log(carrito);
 
@@ -47,7 +46,7 @@ productos.forEach(prod => {
         for (item of carrito){
             if (item.id == prod.id){
                 console.log("existe id igual");
-                item.cant = item.cant + 1;
+                item.cantidad = item.cantidad + 1;
                 console.log(carrito);
                 idEncontrado = true;
 
@@ -71,29 +70,56 @@ $("#bntCarrito").click(function () {
     console.log(carritoLLeno)
     carrito.forEach(produ => {
         
-        let contador = 0;
-
+        produPrecioFinal = produ.precio * 1.21;
 
         $("#cuerpoTabla").append(`
-        <tr>
-        <td id="cantidad">${contador}</td>
+        
+        <tr id="itemTabla-${produ.id}">
+        <td id="cantidad-${produ.id}"><span id="spanCantidad-${produ.id}">${produ.cantidad}</span></td>
         <td>${produ.marca}</td>
         <td>${produ.modelo}</td>
-        <td>${produ.precio}</td>
-        <td>${produ.cant * produ.precio}</td>
+        <td id="precio-${produ.id}"><span id="spanPrecio-${produ.id}">${produ.precio}</span></td>
         <td>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <button id="sumar" type="button" class="btnCarritoCuenta btn btn-success"></button>
-        <button class="btnCarritoCuenta btn btn-danger"></button>
+        <button id="sumar-${produ.id}" type="button" class="btnCarritoCuenta btn btn-success"></button>
+        <button id="restar-${produ.id}"class="btnCarritoCuenta btn btn-danger"></button>
         </div>
         </div>
         </tr>
         `
         )
         
-        $("#sumar").click(function (e) { 
-            e.preventDefault();
-            contador ++;
+        $("#sumar-"+ produ.id).click(function () { 
+            
+            produ.cantidad = produ.cantidad + 1;
+            produPrecioFinal = produ.cantidad * produ.precio
+            $("#spanCantidad-"+ produ.id).remove();
+            $("#spanPrecio-"+ produ.id).remove();
+
+            $("#cantidad-"+ produ.id).append(`<span id="spanCantidad-${produ.id}">${produ.cantidad}</span></td>`)
+            $("#precio-"+ produ.id).append(`<span id="spanPrecio-${produ.id}">${produPrecioFinal}</span></td>`)
+        });
+
+        $("#restar-"+ produ.id).click(function () { 
+            
+            produ.cantidad = produ.cantidad + -1;
+            produPrecioFinal = produ.cantidad * produ.precio
+
+            for (items of carrito){
+            if(items.cantidad == 0){
+                $("#itemTabla-"+ produ.id).remove();
+                
+            }else{
+               
+                console.log("son diferentes")
+                $("#spanCantidad-"+ produ.id).remove();
+                $("#spanPrecio-"+ produ.id).remove();
+    
+                $("#cantidad-"+ produ.id).append(`<span id="spanCantidad-${produ.id}">${produ.cantidad}</span></td>`)
+                $("#precio-"+ produ.id).append(`<span id="spanPrecio-${produ.id}">${produPrecioFinal}</span></td>`)
+    
+            }
+        }
 
         });
     });   

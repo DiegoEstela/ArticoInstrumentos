@@ -13,6 +13,5 @@ function obtenerdatos() {
 }
 obtenerdatos();
 
-const valorDolar = JSON.parse(localStorage.getItem('dolar'));
-console.log(valorDolar);
+
 
