@@ -57,7 +57,7 @@ let productos = [
         marca: "fender",
         modelo: "Stratocaster",
         anio: 650,
-        precio: 135000,
+        precio: 1350,
         imagen:"assets/img/productos/fender-stratocaster.jpg",
         filtro: "filter-electricas"
     }

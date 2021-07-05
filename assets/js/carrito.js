@@ -10,8 +10,8 @@ $(document).ready(function () {
         
     });
 
-    $("#salirCompra").click(function (e) { 
-        e.preventDefault();
+    $("#salirCompra").click(function () { 
+        
         $('#cuerpoTabla').detach();
         $(".carrito-container").hide();
         
@@ -20,4 +20,3 @@ $(document).ready(function () {
 });
 
 /* animacion carrito modal*/
-
