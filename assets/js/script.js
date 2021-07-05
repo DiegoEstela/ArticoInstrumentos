@@ -2,7 +2,9 @@
 
 const listaProductos = document.getElementById('productos');
 let carrito = [];
+let carritoLLeno = [];
 let numeroCompras = [];
+localStorage.clear("carrito")
 
 function agregarItem(objeto){
 
@@ -54,32 +56,34 @@ productos.forEach(prod => {
         if(idEncontrado == false){
             objetoAAgregar = productos [prod.id - 1];
             agregarItem(objetoAAgregar);
+
         }
-            
+        localStorage.setItem('carrito',JSON.stringify(carrito));  
     })
 
 
 })
 
-localStorage.clear("carrito")
+
 
 $("#bntCarrito").click(function () { 
-    
-    console.log(carrito)
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    Object.values(carrito).forEach(produ => {
-        let contador = 0;  
-        $("#cuerpoTabla").append(`
+     
+    console.log(carritoLLeno)
+    carrito.forEach(produ => {
+        
+        let contador = 0;
 
+
+        $("#cuerpoTabla").append(`
         <tr>
-        <td id="cantidad"> < /td>
+        <td id="cantidad">${contador}</td>
         <td>${produ.marca}</td>
         <td>${produ.modelo}</td>
         <td>${produ.precio}</td>
         <td>${produ.cant * produ.precio}</td>
         <td>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <button type="button" class="btnCarritoCuenta btn btn-success"></button>
+        <button id="sumar" type="button" class="btnCarritoCuenta btn btn-success"></button>
         <button class="btnCarritoCuenta btn btn-danger"></button>
         </div>
         </div>
@@ -87,25 +91,23 @@ $("#bntCarrito").click(function () {
         `
         )
         
-        $(".btnCarritoCuenta btn btn-success").click(function (e) { 
-            e.preventDefault()
+        $("#sumar").click(function (e) { 
+            e.preventDefault();
             contador ++;
-            console.log(contador)
 
         });
-            
     });   
-        localStorage.removeItem("carrito")
+       
 });
 
 
 
-
-
  $("#finCompra").click(function () { 
-            
+    localStorage.removeItem("carrito")
+    $('#cuerpoTabla').remove();
     numeroCompras = [];
     $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
-    
+    location.href='index.html'
+
 });
     
