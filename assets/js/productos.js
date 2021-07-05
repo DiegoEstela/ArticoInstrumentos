@@ -36,7 +36,7 @@ let productos = [
         cantidad : 1,
         marca: "gibson",
         modelo: "SG",
-        anio: 1975,
+        anio: 975,
         precio: 1200,
         imagen:"assets/img/productos/gibson-sg.jpg",
         filtro: "filter-electricas"

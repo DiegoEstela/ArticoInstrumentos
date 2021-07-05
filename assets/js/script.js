@@ -79,12 +79,8 @@ $("#bntCarrito").click(function () {
         <td>${produ.marca}</td>
         <td>${produ.modelo}</td>
         <td id="precio-${produ.id}"><span id="spanPrecio-${produ.id}">${produ.precio}</span></td>
-        <td>
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <button id="sumar-${produ.id}" type="button" class="btnCarritoCuenta btn btn-success"></button>
-        <button id="restar-${produ.id}"class="btnCarritoCuenta btn btn-danger"></button>
-        </div>
-        </div>
+        <td><button id="sumar-${produ.id}" type="button" class="btnCarritoFin btn btn-success"><i class="btnCarritoCuenta bi bi-bag-dash"></i></button></td>
+        <td><button id="restar-${produ.id}" class="btnCarritoFin btn btn-danger"><i class="btnCarritoCuenta bi bi-bag-plus"></button></td>
         </tr>
         `
         )

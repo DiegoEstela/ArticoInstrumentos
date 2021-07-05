@@ -10,9 +10,11 @@ $(document).ready(function () {
         
     });
 
-    $("#salirCarrito").click(function (e) { 
+    $("#salirCompra").click(function (e) { 
         e.preventDefault();
+        $('#cuerpoTabla').detach();
         $(".carrito-container").hide();
+        
         
     });
 });

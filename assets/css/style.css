@@ -52,16 +52,21 @@ h1, h2, h3, h4, h5, h6 {
   
   
 }
-.btn-group{
 
- 
-
-}
 
 .btnCarritoCuenta{
 
-  width: 0.5px;
-  height: 4px;
+  width: 80%;
+  height: 70%;
+  padding: 6px;
+  text-align: center;
+
+}
+
+.btnCarritoFin{
+
+  padding: 0px;
+
   text-align: center;
 
 }
@@ -74,11 +79,23 @@ tr{
   height: 85%;
 }
 
+td{
+
+  text-align: center;
+  margin-bottom: 0px;
+}
 /*--------------------------------------------------------------
 # Modales
 --------------------------------------------------------------*/
+.cuerpoModalcompra{
+  text-align: center;
+}
 
+#exampleModalLabel{
 
+  text-align: center;
+  width: 100%;
+}
 .cuerpoModal .form-control{
   
   width: 70%;
