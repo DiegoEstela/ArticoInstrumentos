@@ -4,6 +4,7 @@ const listaProductos = document.getElementById('productos');
 let carrito = [];
 let carritoLLeno = [];
 let numeroCompras = [];
+let precioFinal = [];
 localStorage.clear("carrito")
 
 function agregarItem(objeto){
@@ -78,8 +79,8 @@ $("#bntCarrito").click(function () {
         <td>${produ.marca}</td>
         <td>${produ.modelo}</td>
         <td id="precio-${produ.id}"><span id="spanPrecio-${produ.id}">${produ.precio}</span></td>
-        <td><button id="sumar-${produ.id}" type="button" class="btnCarritoFin btn btn-success"><i class="btnCarritoCuenta bi bi-bag-dash"></i></button></td>
-        <td><button id="restar-${produ.id}" class="btnCarritoFin btn btn-danger"><i class="btnCarritoCuenta bi bi-bag-plus"></button></td>
+        <td><button id="sumar-${produ.id}" type="button" class="btnCarritoFin btn btn-success"><i class="btnCarritoCuenta bi bi-bag-plus"></i></button></td>
+        <td><button id="restar-${produ.id}" class="btnCarritoFin btn btn-danger"><i class="btnCarritoCuenta bi bi-bag-dash"></button></td>
         </tr>
         `
         )
@@ -130,11 +131,25 @@ $("#bntCarrito").click(function () {
 /* Boton finalizar la compra */
 
 $("#finCompra").click(function () { 
-    localStorage.removeItem("carrito")
-    $('#cuerpoTabla').remove();
-    numeroCompras = [];
-    $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
-    location.href='index.html'
+
+    
+
+    carrito.forEach(item => {
+
+        precioFinal.push(item.precio * item.cantidad)
+
+    });
+        
+        const acumular = (acumulador, numero) => acumulador + numero;
+        let total = precioFinal.reduce(acumular);
+        alert(total)
+
+        localStorage.removeItem("carrito")
+        $('#cuerpoTabla').remove();
+        numeroCompras = [];
+        $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
+        
+        location.href='index.html'
 
 });
     
