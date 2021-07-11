@@ -5,6 +5,7 @@ let carrito = [];
 let carritoLLeno = [];
 let numeroCompras = [];
 let precioFinal = [];
+
 localStorage.clear("carrito")
 
 function agregarItem(objeto){
@@ -132,8 +133,6 @@ $("#bntCarrito").click(function () {
 
 $("#finCompra").click(function () { 
 
-    
-
     carrito.forEach(item => {
 
         precioFinal.push(item.precio * item.cantidad)
@@ -142,15 +141,31 @@ $("#finCompra").click(function () {
         
         const acumular = (acumulador, numero) => acumulador + numero;
         let total = precioFinal.reduce(acumular);
-        alert(total)
+        let dolarHoy = JSON.parse(localStorage.getItem('dolar'));
+        let dolarHoyparse = parseFloat(dolarHoy)
+        let totalPesosMasIva = (total * dolarHoyparse) * 1.21
+        let efectivo = totalPesosMasIva / 1.10
+        let tresCuotas = totalPesosMasIva * 1.05
+        let seisCuotas = totalPesosMasIva * 1.11
+        let doceCuotas = totalPesosMasIva * 1.15
+        console.log(totalPesosMasIva)
+        
+        $("#precioFinal").append(`El valor total en pesos Arg + IVA es: $ ${totalPesosMasIva}`);
+        $("#efectivo").append(`${efectivo.toFixed(2)}`);
+        $("#tresCuotas").append(`${tresCuotas.toFixed(2)}`);
+        $("#seisCuotas").append(`${seisCuotas.toFixed(2)}`);
+        $("#doceCuotas").append(`${doceCuotas.toFixed(2)}`);
+        
 
         localStorage.removeItem("carrito")
         $('#cuerpoTabla').remove();
         numeroCompras = [];
         $("#bntCarrito").append(`<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> ${numeroCompras.length} </span>`)            
         
-        location.href='index.html'
+        
 
 });
     
+$("#terminar").click(function () {location.href='index.html'});
+
     

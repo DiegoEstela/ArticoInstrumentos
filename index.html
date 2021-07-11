@@ -42,6 +42,9 @@
 
     </div>
   </header>
+
+  <!-- Modales -->
+
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -64,10 +67,59 @@
     </div>
   </div>
 
+  <div class="modal fade" id="finalCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Felicidades por tu compra</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="cuerpoPreciofinal" class="modal-body">
+          <p id="precioFinal"></p>
+          <p></p>
+          <br>
+          <div class="form-check">
+            <input id="inputUno"class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Efectivo (10% Descuento):  $<span id="efectivo"> </span>
+            </label>
+          </div>
+          <div class="form-check">
+            <input id="inputDos"class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              3 Cuotas (5% Interes) de:  $<span id="tresCuotas"> </span>
+            </label>
+          </div>
+          <div class="form-check">
+            <input id="inputTres"class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              6 Cuotas (11% Interes) de:  $<span id="seisCuotas"> </span>
+            </label>
+          </div>
+          <div class="form-check">
+            <input id="inputCuatro"class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              12 Cuotas (15% Interes) de:  $<span id="doceCuotas"> </span>
+            </label>
+          </div>
+        </div>
+        <div id="terminarFooter" class="modal-footer">
+
+          <button id="terminar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Terminar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Fin Modales -->
+
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
-      
+      <!-- Tabla finalizar compra -->
       <div id="CarroFinal" class="carrito-container">
+
+        
         <table id="tabla" class="table">
           <thead>
           <tr>
@@ -82,11 +134,14 @@
           <tbody id="cuerpoTabla" >
           </tbody>
           </table>
-        <div class="carrito-footer">
-        <button id="finCompra"  class="bntCompra btn btn-outline-primary">Finalizar la compra</button>
-      </div>
-      </div>
+          <div class="carrito-footer">
+          <button id="finCompra"  class="bntCompra btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#finalCompra">Finalizar la compra</button>
+          </div>
+          </div>
       
+      <!-- Fin Tabla finalizar compra -->
+      
+
       <h1 id="titulo">ARTICO MUSICA</h1>
       <h2 id="tituloDos">amamos tanto la musica como los instrumentos, por eso ,vendemos los mejores!</h2>
       <a href="#about" class="btn-get-started scrollto"><i id="btnTitulo" class="bx bx-chevrons-down" > </i></a>

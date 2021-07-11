@@ -103,6 +103,18 @@ td{
   text-align: center;
   align-content: center;
 }
+#cuerpoPreciofinal{
+
+  display: block;
+}
+#precioFinal{
+
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

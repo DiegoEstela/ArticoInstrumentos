@@ -5,12 +5,14 @@ function obtenerdatos() {
       if (estado == 'success') {
         let dolar = resultado[0].casa.compra;
         localStorage.setItem('dolar',JSON.stringify(dolar));
+        console.log("el valor del dolar es: " + dolar)
       } else {
         console.log('el get no cargo como correspone');
       }
     }
   );
 }
+
 obtenerdatos();
 
 
